@@ -8,6 +8,7 @@ public class BossManager : MonoBehaviour {
 	public float health;
 	public int str;
 	public GameObject cloud;
+	public GameObject lightning;
 	public Animator anim;
 	public int phase;
 
@@ -22,11 +23,17 @@ public class BossManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (phase == 2) {
+			lightning.GetComponent<LightningStrike> ().waitTime = 2;
+		}
+		if (phase == 2) {
+			lightning.GetComponent<LightningStrike> ().waitTime = 1;
+		}
 	}
 
 	public void InitBoss(){
 		phase = 1;
 		activeAbility = 1;
+		lightning.GetComponent<LightningStrike> ().InitLightning ();
 	}
 }
