@@ -44,6 +44,6 @@ public class LightningStrike : MonoBehaviour {
 	IEnumerator DisableLightning(){
 		yield return new WaitForSeconds (4);
 		anim.SetBool ("SkyLightning", false);
-		InitLightning ();
+
 }
 }

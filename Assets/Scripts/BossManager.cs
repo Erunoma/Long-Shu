@@ -36,4 +36,9 @@ public class BossManager : MonoBehaviour {
 		activeAbility = 1;
 		lightning.GetComponent<LightningStrike> ().InitLightning ();
 	}
+
+	public void ChooseAttack (){
+		
+	}
+
 }

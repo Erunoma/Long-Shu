@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 665848316}
   - component: {fileID: 665848321}
   - component: {fileID: 665848322}
+  - component: {fileID: 665848323}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -497,7 +498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7588128006b53430ab47dee3cf656334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  movementSpeed: 0
+  jumpPower: 0
+  grounded: 0
 --- !u!23 &665848318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -583,6 +586,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d141e3d9328e14f16a687fe2f7a2beaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &665848323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665848315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1404013c0ba6645cd8016827fba89bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
+  immune: 0
+  immuneTime: 0
 --- !u!1 &865134832
 GameObject:
   m_ObjectHideFlags: 0
