@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class retaliate : MonoBehaviour {
+public class Retaliate : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other)//when player comes in contact with something 
 	{
-		if (other.gameObject.tag  == "shot") {
+		if (other.gameObject.tag  == "Shot") {
 			Debug.Log ("fuck");
-			other.gameObject.GetComponent<shooting>().speed = other.gameObject.GetComponent<shooting>().speed*-1;
+			other.gameObject.GetComponent<Shooting>().speed = other.gameObject.GetComponent<Shooting>().speed*-1;
 		}
 	}
 }

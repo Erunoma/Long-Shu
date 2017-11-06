@@ -8,7 +8,7 @@ public class LightningStrike : MonoBehaviour {
 	public Animator anim;
 	public int damage;
 	public int waitTime;
-
+	public GameObject bossManager;
 
 
 	// Use this for initialization
@@ -44,6 +44,6 @@ public class LightningStrike : MonoBehaviour {
 	IEnumerator DisableLightning(){
 		yield return new WaitForSeconds (4);
 		anim.SetBool ("SkyLightning", false);
-
+		bossManager.GetComponent<BossManager> ().NextAttack ();
 }
 }
