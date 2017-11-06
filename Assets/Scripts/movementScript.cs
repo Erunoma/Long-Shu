@@ -14,6 +14,8 @@ public class movementScript : MonoBehaviour {
 	{
 		rb2d = GetComponent<Rigidbody2D> ();//getting the rigidbody from whatever the script is attached to
 		//shield = GameObject.FindGameObjectWithTag("shield");
+
+		shield.SetActive (false);
 	}
 
 	void FixedUpdate () {
@@ -37,12 +39,11 @@ public class movementScript : MonoBehaviour {
 
 		}
 		}
-		if (Input.GetKeyDown (KeyCode.E) || Input.GetKeyDown (KeyCode.RightShift)) {
+		if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.RightShift)) {
 			shield.SetActive (true);
 		
-		}
-		if (Input.GetKeyUp(KeyCode.E)|| Input.GetKeyUp(KeyCode.RightShift)) {
-			shield.SetActive (false);	
+		} else {
+			shield.SetActive (false);
 		}
 			
 	}
