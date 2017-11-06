@@ -7,6 +7,11 @@ TagManager:
   - ground
   - shield
   - shot
+  - Ground
+  - Shot
+  - Shield
+  - Boss
+  - Damage
   layers:
   - Default
   - TransparentFX
