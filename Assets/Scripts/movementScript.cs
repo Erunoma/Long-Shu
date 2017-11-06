@@ -7,7 +7,7 @@ public class movementScript : MonoBehaviour {
 	public float movementSpeed;// how fast will you run, set in  inspector
 	public float jumpPower; // how high will you jump, set in  inspector
 	public bool grounded;
-	public GameObject shield;
+	public GameObject shield,leftSide,rightSide;
 	private Rigidbody2D rb2d;
 
 	void Start()
@@ -19,21 +19,23 @@ public class movementScript : MonoBehaviour {
 	void FixedUpdate () {
 		
 		float moveHorizontal = Input.GetAxis ("Horizontal");
-		Vector2 movement = new Vector2 (moveHorizontal, transform.position.y);
-		//rb2d.AddForce (movement * movementSpeed / Time.fixedDeltaTime);
 
 		if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)) 
 		{
 			rb2d.AddForce (Vector2.left*movementSpeed);
+			shield.transform.position = leftSide.transform.position;
 		}
 		if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow)) 
 		{
 			rb2d.AddForce (Vector2.right*movementSpeed);
+			shield.transform.position = rightSide.transform.position;
 		}
-		if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) && grounded== true)   {
-			rb2d.AddForce (Vector2.up*jumpPower);
-			grounded = false;
-			
+		if (grounded) {
+			if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))   {
+				rb2d.AddForce (Vector2.up*jumpPower);
+				grounded = false;
+
+		}
 		}
 		if (Input.GetKeyDown (KeyCode.E) || Input.GetKeyDown (KeyCode.RightShift)) {
 			shield.SetActive (true);
@@ -42,6 +44,7 @@ public class movementScript : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.E)|| Input.GetKeyUp(KeyCode.RightShift)) {
 			shield.SetActive (false);	
 		}
+			
 	}
 	void OnCollisionEnter2D (Collision2D other)//when player comes in contact with something 
 	{
