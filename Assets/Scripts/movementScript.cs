@@ -6,7 +6,7 @@ public class movementScript : MonoBehaviour {
 		
 	public float movementSpeed;// how fast will you run, set in  inspector
 	public float jumpPower; // how high will you jump, set in  inspector
-	public bool grounded;
+	public bool grounded, airborne;
 	public GameObject shield,leftSide,rightSide;
 	private Rigidbody2D rb2d;
 
@@ -36,15 +36,18 @@ public class movementScript : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))   {
 				rb2d.AddForce (Vector2.up*jumpPower);
 				grounded = false;
+				airborne = true;
 
 		}
 		}
-		if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.RightShift)) {
+
+		if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.RightShift))  {
 			shield.SetActive (true);
 		
 		} else {
 			shield.SetActive (false);
 		}
+
 			
 	}
 	void OnCollisionEnter2D (Collision2D other)//when player comes in contact with something 
@@ -52,6 +55,7 @@ public class movementScript : MonoBehaviour {
 		if (other.gameObject.tag == "ground")// if player touch a object with the tag "Grounded", it will set the isGround and doubleJump to true
 		{
 			grounded= true;
+			airborne = false;
 		}
 	}
 }
