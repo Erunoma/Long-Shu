@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementScript : MonoBehaviour {
+public class movementScript : MonoBehaviour {
 		
 	public float movementSpeed;// how fast will you run, set in  inspector
 	public float jumpPower; // how high will you jump, set in  inspector
