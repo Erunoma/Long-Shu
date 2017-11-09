@@ -25,7 +25,7 @@ public class BossOrb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (launching == true) {
-			currentOrb.transform.position += new Vector3(targetPos.x,targetPos.y,0) / 20;
+			currentOrb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (targetPos.x,targetPos.y));
 		}
 		if (growing == true) {
 			currentOrb.GetComponent<Transform> ().localScale += new Vector3 (0.1F, 0.1F, 0.1F) * Time.deltaTime;

@@ -226,9 +226,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 30
-  jumpPower: 400
+  jumpPower: 200
   grounded: 0
   shield: {fileID: 630520395}
+  leftSide: {fileID: 1373169025}
+  rightSide: {fileID: 1372646468}
 --- !u!114 &87800035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   immune: 0
-  immuneTime: 0
-  knockBack: 0
+  immuneTime: 1
+  knockBack: 100
 --- !u!1 &103895791
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,10 +554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7588128006b53430ab47dee3cf656334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpPower: 100
+  movementSpeed: 0
+  jumpPower: 0
   grounded: 0
   shield: {fileID: 0}
+  leftSide: {fileID: 0}
+  rightSide: {fileID: 0}
 --- !u!23 &665848318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -707,6 +711,25 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984422606221446, guid: 78b1003ca93b849e7a6d4123768729dd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61083739758362660, guid: 78b1003ca93b849e7a6d4123768729dd,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.40013528
+      objectReference: {fileID: 0}
+    - target: {fileID: 61083739758362660, guid: 78b1003ca93b849e7a6d4123768729dd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.0042761564
+      objectReference: {fileID: 0}
+    - target: {fileID: 61083739758362660, guid: 78b1003ca93b849e7a6d4123768729dd,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.629021
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114288733456657680, guid: 78b1003ca93b849e7a6d4123768729dd, type: 2}
@@ -969,6 +992,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1372646468 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1874611884485860, guid: 78b1003ca93b849e7a6d4123768729dd,
+    type: 2}
+  m_PrefabInternal: {fileID: 764227969}
+--- !u!1 &1373169025 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1180137039895074, guid: 78b1003ca93b849e7a6d4123768729dd,
+    type: 2}
+  m_PrefabInternal: {fileID: 764227969}
 --- !u!1 &1655361509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1513,8 @@ GameObject:
   - component: {fileID: 2081857814}
   - component: {fileID: 2081857812}
   - component: {fileID: 2081857813}
+  - component: {fileID: 2081857811}
+  - component: {fileID: 2081857816}
   m_Layer: 0
   m_Name: BossOrb
   m_TagString: Damage
@@ -1487,6 +1522,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2081857811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081857810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652bfe412a63e4150bbe12d81664edb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1924569137}
+  player: {fileID: 87800033}
 --- !u!23 &2081857812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1535,7 +1583,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5068302
 --- !u!33 &2081857814
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1556,6 +1604,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2081857816
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081857810}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2093879355
 GameObject:
   m_ObjectHideFlags: 0

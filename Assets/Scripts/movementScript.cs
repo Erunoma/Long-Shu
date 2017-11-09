@@ -36,12 +36,11 @@ public class MovementScript : MonoBehaviour {
 				grounded = false;
 
 		}
-<<<<<<< HEAD
+
 		if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) && grounded== true)   {
 			rb2d.AddForce (Vector2.up*jumpPower);
 			grounded = false;
-=======
->>>>>>> master
+
 		}
 		if (Input.GetKeyDown (KeyCode.E) || Input.GetKeyDown (KeyCode.RightShift)) {
 			shield.SetActive (true);
@@ -51,6 +50,7 @@ public class MovementScript : MonoBehaviour {
 			shield.SetActive (false);	
 		}
 			
+	}
 	}
 	void OnCollisionEnter2D (Collision2D other)//when player comes in contact with something 
 	{
