@@ -225,9 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7588128006b53430ab47dee3cf656334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 30
-  jumpPower: 200
+  movementSpeed: 25
+  jumpPower: 400
   grounded: 0
+  airborne: 0
   shield: {fileID: 630520395}
   leftSide: {fileID: 1373169025}
   rightSide: {fileID: 1372646468}
@@ -557,6 +558,7 @@ MonoBehaviour:
   movementSpeed: 0
   jumpPower: 0
   grounded: 0
+  airborne: 0
   shield: {fileID: 0}
   leftSide: {fileID: 0}
   rightSide: {fileID: 0}
@@ -731,6 +733,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 2.629021
       objectReference: {fileID: 0}
+    - target: {fileID: 50930805191527100, guid: 78b1003ca93b849e7a6d4123768729dd,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 19980ee7d00e74b68a2981675ec54bf7, type: 2}
     m_RemovedComponents:
     - {fileID: 114288733456657680, guid: 78b1003ca93b849e7a6d4123768729dd, type: 2}
     - {fileID: 114080851160630534, guid: 78b1003ca93b849e7a6d4123768729dd, type: 2}
@@ -1475,7 +1482,7 @@ MonoBehaviour:
   str: 2
   cloud: {fileID: 1739970159}
   lightning: {fileID: 346715548}
-  boss: {fileID: 1924569137}
+  boss: {fileID: 0}
   anim: {fileID: 1924569142}
   phase: 0
   randAbility: 0

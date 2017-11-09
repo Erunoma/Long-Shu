@@ -39,11 +39,6 @@ public class MovementScript : MonoBehaviour {
 				airborne = true;
 
 		}
-
-		if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) && grounded== true)   {
-			rb2d.AddForce (Vector2.up*jumpPower);
-			grounded = false;
-
 		}
 
 		if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.RightShift))  {
@@ -55,9 +50,13 @@ public class MovementScript : MonoBehaviour {
 
 			
 	}
-	}
 	void OnCollisionEnter2D (Collision2D other)//when player comes in contact with something 
 	{
+		if (other.gameObject.tag == "ground")// if player touch a object with the tag "Grounded", it will set the isGround and doubleJump to true
+		{
+			grounded= true;
+			airborne = false;
+		}
 		if (other.gameObject.tag == "Ground")// if player touch a object with the tag "Grounded", it will set the isGround and doubleJump to true
 		{
 			grounded= true;
