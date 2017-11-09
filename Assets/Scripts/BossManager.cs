@@ -9,8 +9,11 @@ public class BossManager : MonoBehaviour {
 	public int str;
 	public GameObject cloud;
 	public GameObject lightning;
+	public GameObject boss;
 	public Animator anim;
 	public int phase;
+
+	public int randAbility;
 
 	public int activeAbility;
 	public int cooldown;
@@ -35,6 +38,16 @@ public class BossManager : MonoBehaviour {
 		phase = 1;
 		activeAbility = 1;
 		lightning.GetComponent<LightningStrike> ().InitLightning ();
+	}
+
+	public void NextAttack(){
+		activeAbility = Random.Range (1, 3);
+		if (activeAbility == 1) {
+			lightning.GetComponent<LightningStrike> ().InitLightning ();
+		}
+		if (activeAbility == 2) {
+			boss.GetComponent<BossOrb> ().InitOrb ();
+		}
 	}
 
 	public void ChooseAttack (){

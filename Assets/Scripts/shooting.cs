@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shooting : MonoBehaviour {
+public class Shooting : MonoBehaviour {
 	public float speed;
 	Rigidbody2D rb2d ;
 
