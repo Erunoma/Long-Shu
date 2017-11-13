@@ -51,10 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerDamage.cs" />
      <Compile Include="Assets\Scripts\BossManager.cs" />
+     <Compile Include="Assets\Scripts\BossOrb.cs" />
+     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
+     <Compile Include="Assets\Scripts\FloatingPlatform.cs" />
      <Compile Include="Assets\Scripts\LightningStrike.cs" />
      <Compile Include="Assets\Scripts\movementScript.cs" />
+     <Compile Include="Assets\Scripts\OrbDeflect.cs" />
+     <Compile Include="Assets\Scripts\PlayerDamage.cs" />
+     <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\retaliate.cs" />
      <Compile Include="Assets\Scripts\shooting.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
